@@ -26,81 +26,89 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             var time_of_the_day by remember {
-                mutableStateOf("")
+                mutableStateOf("") //State variables to store user input in this case time of the day
             }
 
             var food_name by remember {
-                mutableStateOf("")
+                mutableStateOf("") //State variables to store user input in this case food name
 
             }
 
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.CenterHorizontally, //center items horizontally to align
                 modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0xff212121))
+                    .fillMaxSize() // utilises the full screen
+                    .background(Color(0xff212121)) // background color dark gray
 
 
             ) {
                 Text(
-                    text = "Hera Nutritions",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.LightGray,
-                    textAlign = TextAlign.Center,
+                    text = "Hera Nutritions", //title of the application in bold
+                    fontSize = 30.sp, // size of font for title of the application
+                    fontWeight = FontWeight.Bold, //weight of the title font
+                    color = Color.LightGray, //color of the title
+                    textAlign = TextAlign.Center, // alignment of the title centered
                 )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(text = "When searching utilise the time of the day please see below:",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = Color.LightGray,
-                    textAlign = TextAlign.Center,
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                    Text(text = "Morning",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
-                    Text(text = "Mid-morning",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
-                    Text(text = "Afternoon",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
-                    Text(text = "Mid-afternoon",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
-                    Text(text = "Dinner",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
-                    Text(text = "Dessert",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Normal,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                    )
+                Spacer(modifier = Modifier.height(16.dp)) // spacing between the title and instructions
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Text(text = "When searching utilise the time of the day please see below:",
+                    fontSize = 24.sp, //font size
+                    fontWeight = FontWeight.Medium, //font weight
+                    color = Color.LightGray, // font color
+                    textAlign = TextAlign.Center, // center alignment of instructions
+                ) // font size, weight, color, alignment
+
+                Spacer(modifier = Modifier.height(16.dp)) // spacing using height
+
+                Text(text = "Morning", //time of the day Morning
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Text(text = "Mid-morning", //time of the day Mid-morning
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Text(text = "Afternoon", //time of the day Afternoon
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Text(text = "Mid-afternoon", //time of the day Mid-afternoon
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Text(text = "Dinner", //time of the day Dinner
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Text(text = "Dessert", //time of the day Dessert
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) // font size, weight, color, alignment
+
+                Spacer(modifier = Modifier.height(16.dp)) // spacing using height
 
                 OutlinedTextField(value = time_of_the_day, onValueChange = { text ->
 
                     time_of_the_day = text
 
-                },
+                }, // search text box
 
                     placeholder = {
                         Text(text = "Enter your meal of the day here",
@@ -108,87 +116,91 @@ class MainActivity : ComponentActivity() {
                             fontWeight = FontWeight.Medium,
                             color = Color.LightGray,
                             textAlign = TextAlign.Center,
-                            )
-            },
-            textStyle = LocalTextStyle.current.copy(color = Color.White), // White text inside the box
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.DarkGray, // Dark background for contrast
-                unfocusedContainerColor = Color.Gray,
-                focusedIndicatorColor = Color.White, // White underline when active
-                unfocusedIndicatorColor = Color.LightGray,
-                cursorColor = Color.White, // White cursor
-                focusedTextColor = Color.White // Ensures text stays white
-            )
+                        ) // text inside text box with the font size, weight, color, alignment
+                    },
+                    textStyle = LocalTextStyle.current.copy(color = Color.White), // White text inside the box
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Color.DarkGray, // Dark background for contrast
+                        unfocusedContainerColor = Color.Gray,
+                        focusedIndicatorColor = Color.White, // White underline when active
+                        unfocusedIndicatorColor = Color.LightGray,
+                        cursorColor = Color.White, // White cursor
+                        focusedTextColor = Color.White // Ensures text stays white
+                    )
                 )
 
-                Spacer(modifier = Modifier.height(20.dp))
-                    Row {
+                Spacer(modifier = Modifier.height(20.dp))//spacing using height
 
-                        Button(onClick = {
-                            food_name = when (time_of_the_day) {
-                                "Morning" -> "Cereal and Yoghurt OR Eggs, Bacon and Bread OR Croissant with Ham and Cheese"
-                                "Mid-morning" -> "Smoothie OR Yoghurt OR Energy Bar"
-                                "Afternoon" -> "Sandwich OR Pasta OR Burger and fries"
-                                "Mid-afternoon" -> "Chips OR Protein Bar OR Sweets"
-                                "Dinner" -> "Spaghetti Meatballs OR Pizza OR Steak with Salad and Mash Potatoes"
-                                "Dessert" -> "Apple or Milk Tart OR Ice-cream OR Malva Pudding"
-                                else -> "Invalid time of the day"
+                // Row Layout to Arrange Buttons Side by Side
+                Row {
 
-                            }
+                    //Button functions on Search = results
 
-                        }, colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
-                            shape = RoundedCornerShape(20.dp),
-                            border = BorderStroke(2.dp, Color.White), //  White border/Stroke
-                            modifier = Modifier
-                                .width(180.dp)
-                                .padding(horizontal = 18.dp)
-                                .height(50.dp))
+                    Button(onClick = {
+                        food_name = when (time_of_the_day) {
+                            "Morning" -> "Cereal and Yoghurt OR Eggs, Bacon and Bread OR Croissant with Ham and Cheese"
+                            "Mid-morning" -> "Smoothie OR Yoghurt OR Energy Bar"
+                            "Afternoon" -> "Sandwich OR Pasta OR Burger and fries"
+                            "Mid-afternoon" -> "Chips OR Protein Bar OR Sweets"
+                            "Dinner" -> "Spaghetti Meatballs OR Pizza OR Steak with Salad and Mash Potatoes"
+                            "Dessert" -> "Apple or Milk Tart OR Ice-cream OR Malva Pudding"
+                            else -> "Invalid time of the day"
 
+                        } // Search by time of the day to get food name as the result
 
-                        {
-                            Text(text = "Search",
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.Medium,
-                                color = Color.White,
-                                textAlign = TextAlign.Center,
-                                )
-                        }
-                        Spacer(modifier = Modifier.width(30.dp))
+                    }, colors = ButtonDefaults.buttonColors(containerColor = Color.Gray), // color of the button
+                        shape = RoundedCornerShape(20.dp), // shape of the button
+                        border = BorderStroke(2.dp, Color.White), //  White border/Stroke
+                        modifier = Modifier
+                            .width(180.dp) ///width of the button
+                            .padding(horizontal = 18.dp) //added padding space in dp horizontally to button
+                            .height(50.dp)) // height of the button
 
-                        Button(onClick = {
-                            time_of_the_day = ""
-                            food_name = ""
-                        }, colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
-                            shape = RoundedCornerShape(20.dp),
-                            border = BorderStroke(2.dp, Color.White), //  White border/Stroke
-                            modifier = Modifier
-                                .width(180.dp)
-                                .padding(horizontal = 18.dp)
-                                .height(50.dp))
-
-                        {
-                            Text(text = "Clear",
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.Medium,
-                                color = Color.White,
-                                textAlign = TextAlign.Center,
-                            )
-                        }
+                    // Row Layout to Arrange Buttons Side by Side
+                    {
+                        Text(text = "Search",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = Color.White,
+                            textAlign = TextAlign.Center,
+                        ) //font size, weight, color, alignment
                     }
-                Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.width(30.dp)) //spacing using width
 
-                    Text(text = "Meal of the day suggestions: $food_name",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Medium,
-                        color = Color.LightGray,
-                        textAlign = TextAlign.Center,
-                        )
-                    Text(text = "")
+                    //Button functions on Search = results and then clears
 
+                    Button(onClick = {
+                        time_of_the_day = ""
+                        food_name = ""
+                    }, colors = ButtonDefaults.buttonColors(containerColor = Color.Gray), // color of the button
+                        shape = RoundedCornerShape(20.dp), // shape of the button
+                        border = BorderStroke(2.dp, Color.White), //  White border/Stroke
+                        modifier = Modifier
+                            .width(180.dp) ///width of the button
+                            .padding(horizontal = 18.dp) //added padding space in dp horizontally to button
+                            .height(50.dp)) // height of the button
 
+                    {
+                        Text(text = "Clear",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = Color.White,
+                            textAlign = TextAlign.Center,
+                        ) //font size, weight, color, alignment
+                    }
                 }
+                Spacer(modifier = Modifier.height(20.dp)) //spacing using height
+
+                Text(text = "Meal of the day suggestions: $food_name",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                ) //font size, weight, color, alignment
+                Text(text = "") //displays results depending on time of the day
+
+
             }
         }
     }
-
-
+}
