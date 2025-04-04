@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
@@ -42,13 +43,23 @@ class MainActivity : ComponentActivity() {
 
 
             ) {
+                //Banner image
+                Image(painter = painterResource(id = R.drawable.wrap), contentDescription = "Banner",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp)
+                    )
+
                 Text(
                     text = "Hera Nutritions", //title of the application in bold
                     fontSize = 30.sp, // size of font for title of the application
                     fontWeight = FontWeight.Bold, //weight of the title font
                     color = Color.LightGray, //color of the title
                     textAlign = TextAlign.Center, // alignment of the title centered
+
                 )
+                
                 Spacer(modifier = Modifier.height(16.dp)) // spacing between the title and instructions
 
                 Text(text = "When searching utilise the time of the day please see below:",
